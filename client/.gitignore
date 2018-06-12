@@ -1,0 +1,12 @@
+# general directories/files
+.env
+
+# node directories/files
+node_modules/
+
+# generated directories/files
+coverage/
+dist/
+
+# editor specific directories/files
+.dir-locals.el
