@@ -19,3 +19,5 @@ git:
 install: source ./travis/install.sh
 
 script: source ./travis/script.sh
+
+after_success: source ./travis/after_success.sh
