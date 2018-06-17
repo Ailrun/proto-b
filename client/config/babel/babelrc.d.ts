@@ -1,4 +1,2 @@
-declare const babelConfig: (options: {
-  isProduction: boolean;
-}) => object;
+declare const babelConfig: object;
 export = babelConfig;

@@ -1,6 +1,4 @@
-const babelConfig = require('../babel/babelrc')({
-  isProduction: false,
-});
+const babelConfig = require('../babel/babelrc');
 
 module.exports = {
   collectCoverageFrom: [
@@ -41,5 +39,6 @@ module.exports = {
 
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': '<rootDir>/config/jest/babelTransformer',
   },
 };

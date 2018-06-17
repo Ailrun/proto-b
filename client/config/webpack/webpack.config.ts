@@ -32,7 +32,7 @@ function webpackConfig(_env: string | undefined, { mode }: webpack.Configuration
         ],
         use: [{
           loader: 'babel-loader',
-          options: babelConfig({ isProduction }),
+          options: babelConfig,
         }, {
           loader: 'ts-loader',
           options: {
