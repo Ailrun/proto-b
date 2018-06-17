@@ -6,7 +6,7 @@ export default {
   publicDirectory: path.join(projectRoot, 'public'),
   srcDirectory: path.join(projectRoot, 'src'),
 
-  index: path.join(projectRoot, 'src/index.tsx'),
+  index: path.join(projectRoot, 'src/index.ts'),
   polyfills: path.join(projectRoot, 'config/polyfills/index.js'),
   pugTemplate: path.join(projectRoot, 'template/index.pug'),
   tsconfigDevJson: path.join(projectRoot, 'config/tsconfig/tsconfig.dev.json'),
