@@ -6,6 +6,14 @@ module.exports = {
   ],
   rules: {
     /**
+     * TypeScript-specific rules
+     */
+    'only-arrow-functions': [
+      true,
+      'allow-named-functions',
+    ],
+
+    /**
      * Rules for Functionality
      */
     'no-implicit-dependencies': false,
@@ -18,10 +26,12 @@ module.exports = {
     /**
      * Rules for Maintainability
      */
+    'object-literal-sort-keys': false,
 
     /**
      * Rules for Style
      */
+    'arrow-return-shorthand': true,
     'comment-format': [
       true,
       {
@@ -30,6 +40,15 @@ module.exports = {
     ],
     'interface-name': false,
     'newline-per-chained-call': false,
+    'ordered-imports': [
+      true,
+      {
+        'import-sources-order': 'lowercase-last',
+        'grouped-imports': true,
+        'named-imports-order': 'lowercase-last',
+        'module-source-path': 'full',
+      }
+    ],
     'prefer-function-over-method': [
       true,
       'allow-public',

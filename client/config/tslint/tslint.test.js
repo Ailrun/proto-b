@@ -14,17 +14,20 @@ module.exports = {
     /**
      * TypeScript-specific rules
      */
+    'no-import-side-effect': false,
+    'no-magic-numbers': false,
     'typedef': false,
 
     /**
      * Rules for Functionality
      */
-    'no-void-expression': false,
     'no-null-keyword': false,
+    'no-void-expression': false,
 
     /**
      * Rules for Maintainability
      */
+    'max-line-length': false,
     'no-default-export': false,
 
     /**
