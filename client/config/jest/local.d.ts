@@ -1,3 +1,6 @@
+declare module '@babel/polyfill' {
+}
+
 declare module 'jest-emotion' {
   import * as emotion from 'emotion';
 

@@ -29,7 +29,10 @@ module.exports = {
     '<rootDir>/test',
   ],
 
-  setupTestFrameworkScriptFile: '<rootDir>/config/jest/setupTest.ts',
+  setupFiles: [
+    '@babel/polyfill',
+  ],
+  setupTestFrameworkScriptFile: '<rootDir>/config/jest/setupTestFrameworkScriptFile.ts',
 
   testEnvironment: 'jsdom',
   testMatch: [

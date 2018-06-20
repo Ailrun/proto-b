@@ -36,6 +36,14 @@ module.exports = {
     },
     test: {
       plugins: [
+        [
+          'emotion',
+          {
+            hoist: true,
+            sourceMap: true,
+            autoLabel: true,
+          },
+        ],
         'dynamic-import-node',
         '@babel/plugin-transform-modules-commonjs',
       ],
