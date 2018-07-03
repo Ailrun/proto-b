@@ -1,6 +1,10 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    "paths": {
+      "~src": ["src"],
+      "~src/*": ["src/*"]
+    },
     "types": ["webpack-env"]
   },
   "include": [

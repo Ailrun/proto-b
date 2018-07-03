@@ -25,29 +25,51 @@ function webpackConfig(_env: string | undefined, { mode }: webpack.Configuration
     },
 
     module: {
-      rules: [{
-        test: /.tsx?$/,
-        exclude: [
-          'node_modules',
-        ],
-        use: [{
-          loader: 'babel-loader',
-          options: babelConfig,
-        }, {
-          loader: 'ts-loader',
-          options: {
-            configFile: isProduction ?
-              appPaths.tsconfigProdJson :
-              appPaths.tsconfigDevJson,
-            transpileOnly: true,
-          },
-        }],
-      }, {
-        test: /.pug$/,
-        use: [{
-          loader: 'pug-loader',
-        }],
-      }],
+      rules: [
+        {
+          test: /\.jsx?$/,
+          exclude: [
+            'node_modules',
+          ],
+          use: [
+            {
+              loader: 'babel-loader',
+              options: babelConfig,
+            },
+          ],
+        },
+
+        {
+          test: /\.tsx?$/,
+          exclude: [
+            'node_modules',
+          ],
+          use: [
+            {
+              loader: 'babel-loader',
+              options: babelConfig,
+            },
+            {
+              loader: 'ts-loader',
+              options: {
+                configFile: isProduction ?
+                  appPaths.tsconfigProdJson :
+                  appPaths.tsconfigDevJson,
+                transpileOnly: true,
+              },
+            },
+          ],
+        },
+
+        {
+          test: /\.pug$/,
+          use: [
+            {
+              loader: 'pug-loader',
+            },
+          ],
+        },
+      ],
     },
 
     resolve: {
@@ -63,7 +85,7 @@ function webpackConfig(_env: string | undefined, { mode }: webpack.Configuration
       cached: true,
     },
 
-    devServer: {
+    devServer: isProduction ? undefined : {
       clientLogLevel: 'none',
       compress: true,
       contentBase: [
@@ -84,7 +106,7 @@ function webpackConfig(_env: string | undefined, { mode }: webpack.Configuration
       new HtmlWebpackPlugin({
         inject: true,
         template: appPaths.pugTemplate,
-      }),
+      })
     ].concat(isProduction ? [
     ] : [
       new webpack.HotModuleReplacementPlugin(),
