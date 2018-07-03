@@ -1,0 +1,9 @@
+{
+  "extends": "../config/tsconfig/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "CommonJS",
+    "noEmit": true,
+    "types": ["node"]
+  }
+}

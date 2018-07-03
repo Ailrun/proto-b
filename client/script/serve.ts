@@ -1,12 +1,13 @@
-const process = require('process');
+import process from 'process';
 
-require('dotenv/config');
+import 'dotenv/config';
 
-const LocalWebServer = require('local-web-server');
+import LocalWebServer from 'local-web-server';
+
 const localWebServer = new LocalWebServer();
-
 const appDirectory = 'dist/';
 const indexHTML = 'index.html';
+
 const server = localWebServer.listen({
   port: 4128,
   hostname: 'localhost',

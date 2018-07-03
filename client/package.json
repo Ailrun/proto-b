@@ -58,7 +58,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "serve": "node script/serve",
+    "serve": "ts-node --project script/tsconfig.json script/serve",
     "build": "cross-env TS_NODE_PROJECT=\"./config/webpack/tsconfig.json\" webpack --mode production --config ./config/webpack/webpack.config.ts",
     "lint:src": "tslint -p ./config/tsconfig/tsconfig.dev.json -c ./config/tslint/tslint.dev.js -t codeFrame",
     "lint:test": "tslint -p ./config/tsconfig/tsconfig.test.json -c ./config/tslint/tslint.test.js -t codeFrame",
