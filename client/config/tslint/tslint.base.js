@@ -38,6 +38,11 @@ module.exports = {
         'ignore-pattern': 'tslint:disable[^:]*:.*$',
       },
     ],
+    'file-name-casing': [
+      true,
+      'camel-case',
+      'pascal-case',
+    ],
     'interface-name': false,
     'newline-per-chained-call': false,
     'ordered-imports': [

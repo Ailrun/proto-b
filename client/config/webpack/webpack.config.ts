@@ -1,3 +1,6 @@
+/// <reference types="node" />
+/// <reference types="webpack-dev-server" />
+
 import fs from 'fs';
 import process from 'process';
 
@@ -25,51 +28,32 @@ function webpackConfig(_env: string | undefined, { mode }: webpack.Configuration
     },
 
     module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: [
-            'node_modules',
-          ],
-          use: [
-            {
-              loader: 'babel-loader',
-              options: babelConfig,
-            },
-          ],
-        },
-
-        {
-          test: /\.tsx?$/,
-          exclude: [
-            'node_modules',
-          ],
-          use: [
-            {
-              loader: 'babel-loader',
-              options: babelConfig,
-            },
-            {
-              loader: 'ts-loader',
-              options: {
-                configFile: isProduction ?
-                  appPaths.tsconfigProdJson :
-                  appPaths.tsconfigDevJson,
-                transpileOnly: true,
-              },
-            },
-          ],
-        },
-
-        {
-          test: /\.pug$/,
-          use: [
-            {
-              loader: 'pug-loader',
-            },
-          ],
-        },
-      ],
+      rules: [{
+        test: /.tsx?$/,
+        exclude: [
+          appPaths.nodeModulesDirectory,
+        ],
+        use: [{
+          loader: 'babel-loader',
+          options: babelConfig,
+        }, {
+          loader: 'ts-loader',
+          options: {
+            configFile: isProduction ?
+              appPaths.tsconfigProdJson :
+              appPaths.tsconfigDevJson,
+            transpileOnly: true,
+          },
+        }],
+      }, {
+        test: /.pug$/,
+        exclude: [
+          appPaths.nodeModulesDirectory,
+        ],
+        use: [{
+          loader: 'pug-loader',
+        }],
+      }],
     },
 
     resolve: {

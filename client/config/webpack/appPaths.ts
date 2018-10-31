@@ -1,14 +1,18 @@
+/// <reference types="node" />
+
 import path from 'path';
 
 const projectRoot = path.join(__dirname, '../../');
+const pathFromRoot = (...pathes: Array<string>) => path.join(projectRoot, ...pathes);
 
 export default {
-  publicDirectory: path.join(projectRoot, 'public'),
-  srcDirectory: path.join(projectRoot, 'src'),
+  publicDirectory: pathFromRoot('public'),
+  srcDirectory: pathFromRoot('src'),
+  nodeModulesDirectory: pathFromRoot('node_modules'),
 
-  index: path.join(projectRoot, 'src/index.ts'),
-  polyfills: path.join(projectRoot, 'config/polyfills/index.js'),
-  pugTemplate: path.join(projectRoot, 'template/index.pug'),
-  tsconfigDevJson: path.join(projectRoot, 'config/tsconfig/tsconfig.dev.json'),
-  tsconfigProdJson: path.join(projectRoot, 'config/tsconfig/tsconfig.prod.json'),
+  index: pathFromRoot('src', 'index.ts'),
+  polyfills: pathFromRoot('config', 'polyfills', 'index.js'),
+  pugTemplate: pathFromRoot('template', 'index.pug'),
+  tsconfigDevJson: pathFromRoot('config', 'tsconfig', 'tsconfig.dev.json'),
+  tsconfigProdJson: pathFromRoot('config', 'tsconfig', 'tsconfig.prod.json'),
 };
