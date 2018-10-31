@@ -5,8 +5,8 @@ coverage:
   status:
     project:
       default: off
-      client:
-        flags: client
+      client-ts:
+        flags: client-ts
       server:
         flags: server
 
@@ -24,9 +24,12 @@ comment:
   require_changes: no
 
 flags:
-  client:
+  client-ts:
     paths:
-      - client/
+      - client-ts/
+  client-reasonml:
+    paths:
+      - client-reasonml/
   server:
     paths:
       - server/

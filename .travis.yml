@@ -10,7 +10,7 @@ cache:
 
 matrix:
   include:
-    - env: BUILD_TARGET=client
+    - env: BUILD_TARGET=client-ts
     - env: BUILD_TARGET=server
 
 git:

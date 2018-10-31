@@ -2,8 +2,8 @@
 set -ev
 
 case $BUILD_TARGET in
-    'client')
-        cd client
+    'client-ts')
+        cd client-ts
         ;;
     'server')
         cd server
