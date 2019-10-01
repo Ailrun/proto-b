@@ -1,0 +1,9 @@
+{
+  "name": "proto-b",
+  "alias": "proto-b",
+  "env": {
+    "GITHUB_CLIENT_SECRET": "@github-client-secret",
+    "NODE_ENV": "production"
+  },
+  "public": true
+}

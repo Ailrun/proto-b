@@ -11,6 +11,7 @@ cache:
 matrix:
   include:
     - env: BUILD_TARGET=client-ts
+    - env: BUILD_TARGET=client-reasonml
     - env: BUILD_TARGET=server
 
 git:

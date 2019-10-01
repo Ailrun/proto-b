@@ -5,6 +5,9 @@ case $BUILD_TARGET in
     'client-ts')
         cd client-ts
         ;;
+    'client-reasonml')
+        cd client-reasonml
+        ;;
     'server')
         cd server
         ;;

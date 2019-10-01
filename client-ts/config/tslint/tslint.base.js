@@ -45,6 +45,10 @@ module.exports = {
     ],
     'interface-name': false,
     'newline-per-chained-call': false,
+    'object-literal-key-quotes': [
+      true,
+      'as-needed',
+    ],
     'ordered-imports': [
       true,
       {
